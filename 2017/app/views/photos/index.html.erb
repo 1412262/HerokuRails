@@ -1,0 +1,21 @@
+<div class="col-md-12"><h1>Photos</h1></div>
+<%= javascript_include_tag "photo" %>
+<div class="col-md-12">
+<div class="row">
+<% @photos.each do |photo| %>
+  <div class="col-md-4">
+    
+        <%= image_tag(photo.url,  alt: "like", :class=>"img-thumbnail", :style=>"width:250px;height:170px;"  ) %>
+        <div class="d-flex justify-content-end">
+          <div class="mr-auto">
+            Create By: <%= @user.name %>
+          </div>
+
+           <div>
+            Views: <%= photo.views %>
+          </div>
+        </div>
+  </div>
+<%end%>
+</div>
+</div>
